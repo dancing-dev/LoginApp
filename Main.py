@@ -71,7 +71,9 @@ def openApp(account):
 
 	numLabel = Label(app, text=accountNum)
 	labelForNum =Label(app, text="This is your password: ")
-
+	LabelForName = Label(app, text=loginEntry.get() + " logged in")
+	
+	LabelForName.pack()
 	labelForNum.place(x=0, y= 450)
 	numLabel.place(x=150, y= 450)
 	
