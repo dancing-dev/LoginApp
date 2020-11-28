@@ -47,7 +47,8 @@ def register():
 	Account_txt.close()
 	print("[System] Made Account")
 	registerEntry.delete(0, 'end')
-	openApp(registerName)
+	openApp(registerName, accountNum)
+	
 
 
 
@@ -59,21 +60,19 @@ def login():
 		if loginCombo in a.read():
 			accountName = loginEntry.get()
 			print("[System] Found Account")
-			openApp(accountName)
+			openApp(accountName, loginNum.get())
 		else:
 			print("[System] No Account found")
 			loginEntry.delete(0, 'end')
 
-def openApp(account):
-	accountNum = loginNum.get()
+def openApp(account, num):
+	
 	app = Toplevel(root)
 	app.geometry("500x500")
 
-	numLabel = Label(app, text=accountNum)
+	numLabel = Label(app, text=num)
 	labelForNum =Label(app, text="This is your password: ")
-	LabelForName = Label(app, text=loginEntry.get() + " logged in")
-	
-	LabelForName.pack()
+
 	labelForNum.place(x=0, y= 450)
 	numLabel.place(x=150, y= 450)
 	
